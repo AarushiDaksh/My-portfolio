@@ -13,7 +13,7 @@ function Skills() {
       <h1 className="sectionTitle">Skills</h1>
       <div className={styles.skillList}>
         
-        <SkillList src={checkMarkIcon} skill="Html" />
+        <SkillList src={checkMarkIcon} skill="HTML" />
         <SkillList src={checkMarkIcon} skill="CSS" />
         <SkillList src={checkMarkIcon} skill="JavaScript" />
         <SkillList src={checkMarkIcon} skill="TypeScript" />

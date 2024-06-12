@@ -1,4 +1,5 @@
 {
+
   "name": "my-portfolio",
   "private": true,
   "version": "0.0.0",
@@ -29,5 +30,12 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "vite": "^5.2.0"
   },
-   "proxy": "http://localhost:5000"
+   "proxy": "http://localhost:5000",
+  "dependenciess":{
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^8.1.1"
+  }
 }
