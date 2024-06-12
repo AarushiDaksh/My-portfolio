@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+       :root {
+    --background-color: #fff;
+    --form-text-color: #333;
+    --btn-color: #4CAF50;
+    --btn-text-color: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+textarea,
+input:not([type='submit']) {
+    height: 50px;
+    padding-left: 16px;
+    width: 250px;
+}
+
+textarea {
+    padding-top: 16px;
+    resize: none;
+    height: 250px;
+}
+
+input,
+textarea {
+    border-radius: 20px;
+    border: #888 1px solid;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--form-text-color);
+}
+
+::placeholder {
+    color: var(--form-text-color);
+}
+.connect a{
+border-radius: 8px;
+line-height: 0;
+width: 35px;
+height: 35px;
+display:inline-flex;
+justify-content: center;
+align-items:center;
+margin: 0 8px;
+font-size: 36px;
+text-decoration: none;
+
+}
+.connect{
+border: 0;
+outline: 0;
+border-radius: 320px;
+padding: 16px;
+background-color: #EBECF0;
+text-shadow: 1px 1px 0 white;
+color:#61677C;
+box-shadow: -5px -5px 10px white,  5px 5px 10px #BABECC;
+transition: all 0.2s ease-in-out;
+cursor: pointer;
+font-weight: 700;
+}
+.coonect:hover {
+box-shadow: -2px -2px 5px white, 2px 2px 5px #BABECC;
+}
+.connect:active {
+box-shadow: inset 2px 2px 2px #BABECC, inset -2px -2px 2px white;
+}
+
+
+@media (min-width: 800px) {
+    textarea,
+    input:not([type='submit']) {
+        width: 600px;
+        font-size: 20px;
+    }
+    form {
+        gap: 40px;
+    }
+}
+
+@media (min-width: 1400px) {
+    textarea,
+    input:not([type='submit']) {
+        width: 800px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/contact" method="post">
+            <input type="text" placeholder="Name" name="name">
+            <textarea placeholder="Message" name="message"></textarea>
+            <input class="connect" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
