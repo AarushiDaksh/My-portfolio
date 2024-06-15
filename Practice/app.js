@@ -1,17 +1,17 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cors = require('cors');
 
 const app = express();
-const port = 3000;
-
-// Middleware to handle CORS
-app.use(cors());
+const port = process.env.PORT || 3000; // Use dynamic port for Heroku
 
 // Middleware to parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Enable CORS
+app.use(cors());
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
@@ -47,12 +47,14 @@ app.post('/contact', async (req, res) => {
   const { name, message } = req.body;
   console.log(`Name: ${name}, Message: ${message}`);
 
+  // Create a new contact document
   const newContact = new Contact({
     name: name,
     message: message
   });
 
   try {
+    // Save the contact to the database
     await newContact.save();
     console.log('Contact saved successfully');
     res.send('Form submitted successfully');
