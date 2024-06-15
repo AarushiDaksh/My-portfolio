@@ -30,44 +30,11 @@ hr {
   background-color: var(--text-color);
   margin: 30px auto;
 }
-.connect a{
-    border-radius: 8px;
-    line-height: 0;
-    width: 35px;
-    height: 35px;
-    display:inline-flex;
-    justify-content: center;
-    align-items:center;
-    margin: 0 8px;
-    font-size: 36px;
-    text-decoration: none;
-    
-  }
-  .connect a {
-    border: 0;
-    outline: 0;
-    border-radius: 320px;
-    padding: 16px;
-    background-color: #EBECF0;
-    text-shadow: 1px 1px 0 white;
-    color:#61677C;
-    box-shadow: -5px -5px 10px white,  5px 5px 10px #BABECC;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    font-weight: 700;
-  }
-  .connect a:hover {
-    box-shadow: -2px -2px 5px white, 2px 2px 5px #BABECC;
-  }
-  .connect a:active {
-    box-shadow: inset 2px 2px 2px #BABECC, inset -2px -2px 2px white;
-  }
-
 
 @media (width >= 800px) {
   .skillList {
-    max-width: 850px;
-    gap: 40px;
+    max-width: fit-content;
+    gap: 30px;
 
     p {
       font-size: 20px;
@@ -76,5 +43,97 @@ hr {
 
   hr {
     width: 300px;
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+textarea,
+input:not([type='submit']) {
+  height: 50px;
+  padding-left: 16px;
+  width: 250px;
+}
+
+textarea {
+  padding-top: 16px;
+  resize: none;
+  height: 250px;
+}
+
+input,
+textarea {
+  border-radius: 20px;
+  border: #888 1px solid;
+  box-sizing: border-box;
+  justify-self: center;
+  background-color: var(--background-color);
+  color: var(--form-text-color);
+}
+
+::placeholder {
+  color: var(--form-text-color);
+}
+
+button[type='submit'] {
+  border-radius: 8px;
+  line-height: 0;
+  width: 175px;
+  height: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  text-decoration: none;
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+  border: 0;
+  outline: 0;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #EBECF0;
+  text-shadow: 1px 1px 0 white;
+  color: #61677C;
+  box-shadow: -5px -5px 10px white, 5px 5px 10px #BABECC;
+  cursor: pointer;
+  font-size: 30px;
+  text-align: center;
+}
+
+button[type='submit']:hover {
+  box-shadow: -1px -1px 3px white, 2px 2px 5px #BABECC;
+}
+
+button[type='submit']:active {
+  box-shadow: inset 1px 1px 1px #BABECC, inset -2px -2px 2px white;
+}
+
+@media (min-width: 800px) {
+  textarea,
+  input:not([type='submit']) {
+    width: 600px;
+    font-size: 20px;
+    justify-content: center;
+    /* margin-left: 300px; */
+  }
+  .form {
+    gap: 40px;
+    text-align: center;
+    justify-items: center;
+  }
+  .skillList{
+    width: 800px;
+  }
+  
+}
+
+@media (min-width: 1400px) {
+ 
+  textarea,
+  input:not([type='submit']) {
+    width: 800px;
   }
 }
