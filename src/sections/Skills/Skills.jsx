@@ -16,7 +16,7 @@ function Skills() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const res = await fetch('http://localhost:3000', {
+      const res = await fetch('http://localhost:3000/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
