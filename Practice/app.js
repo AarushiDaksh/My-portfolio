@@ -1,10 +1,14 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose'); // Import Mongoose
+const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
+
+// Middleware to handle CORS
+app.use(cors());
 
 // Middleware to parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,14 +47,12 @@ app.post('/contact', async (req, res) => {
   const { name, message } = req.body;
   console.log(`Name: ${name}, Message: ${message}`);
 
-  // Create a new contact document
   const newContact = new Contact({
     name: name,
     message: message
   });
 
   try {
-    // Save the contact to the database
     await newContact.save();
     console.log('Contact saved successfully');
     res.send('Form submitted successfully');

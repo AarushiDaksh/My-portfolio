@@ -33,13 +33,13 @@
     .resume{
       border-radius: 8px;
       line-height: 0;
-      width: 175px;
-      height: 60px;
+      width: 150px;
+      height: 50px;
       display:inline-flex;
       justify-content: center;
       align-items:center;
       margin: 0 8px;
-      font-size: 36px;
+      font-size: 20px;
       text-decoration: none;
       transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
       
@@ -55,8 +55,8 @@
       box-shadow: -5px -5px 10px white,  5px 5px 10px #BABECC;
       transition: all 0.2s ease-in-out;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 30px;
+      /* font-weight: 600; */
+      font-size: 20px;
       }
       .resume:hover {
       box-shadow: -1px -1px 3px white, 2px 2px 5px #BABECC;
